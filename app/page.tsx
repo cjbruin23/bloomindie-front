@@ -1,16 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 
-async function fetchUserData(): Promise<void> {
-  try {
-    const response = await fetch("/api/users");
-    const json = await response.json();
-    console.log("json", json);
-  } catch (e) {
-    console.error(e);
-  }
-}
-
 export default async function Home() {
 
   const supabase = createClient()
