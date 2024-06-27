@@ -17,9 +17,11 @@ export async function login(formData: FormData) {
   // type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
-    email: formData.get('email') as string,
+    email: formData.get('username') as string,
     password: formData.get('password') as string,
   }
+
+  console.log('data', data)
 
   const { error } = await supabase.auth.signInWithPassword(data)
 
@@ -41,13 +43,15 @@ export async function signup(formData: FormData) {
   // type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
-    email: formData.get('email') as string,
+    email: formData.get('username') as string,
     password: formData.get('password') as string,
   }
-
+console.log('formdata', formData)
+  console.log("data", data)
   const { error } = await supabase.auth.signUp(data)
 
   if (error) {
+    console.log('signup error', error)
     redirect('/error')
   }
 

@@ -3,7 +3,9 @@
 import { useState } from "react";
 import LoginPage from "./login/page";
 
+
 export default function Home() {
+
   const [showModal, setShowModal] = useState(false);
   
   return (
