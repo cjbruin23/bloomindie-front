@@ -12,7 +12,6 @@ export default async function Home() {
     loggedIn = true;
   }
 
-  console.log('data', data)
 
   return (
     <main>
